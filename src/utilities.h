@@ -101,9 +101,9 @@
 // correctly when GetStackTrace() is called with max_depth == 0.
 // Some code may do that.
 
-#if defined(HAVE_LIB_UNWIND)
-# define STACKTRACE_H "stacktrace_libunwind-inl.h"
-#elif !defined(NO_FRAME_POINTER)
+//#if defined(HAVE_LIB_UNWIND)
+//# define STACKTRACE_H "stacktrace_libunwind-inl.h"
+#if !defined(NO_FRAME_POINTER)
 # if defined(__i386__) && __GNUC__ >= 2
 #  define STACKTRACE_H "stacktrace_x86-inl.h"
 # elif defined(__x86_64__) && __GNUC__ >= 2 && HAVE_UNWIND_H
